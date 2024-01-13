@@ -1,0 +1,25 @@
+<div>
+  <table border="1">
+    <tbody>
+      <tr>
+        <td style="width: 42px;">
+          {{data.id}}
+        </td>
+        <td style="width: 150px;">
+          {{data.login}}
+        </td>
+        <td style="width: 200px;">
+          {{data.name}}
+        </td>
+        <td style="width: 200px;">
+          {{data.surrname}}
+        </td>
+        <td class='select' style="width: 100px;">
+          <button class='button' (click)="onEdytujClick()">EDYTUJ</button>
+          <br />
+          <button class='button' (click)="onDeleteClick()">USUN Z BAZY</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

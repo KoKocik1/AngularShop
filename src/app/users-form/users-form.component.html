@@ -1,0 +1,33 @@
+
+<div class="productForm">
+  <div class="container">
+    <form *ngIf="user !=null" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+      <div class="brand-title">USER EDIT</div>
+      <div class="inputs">
+        <label>Login</label>
+        <input type="text" name="login" id="login" [(ngModel)]="user.login" />
+
+        <label>Old Password</label>
+        <input type="password" name="passwordOld" id="passwordOld" ngModel/>
+
+        <label>New Password</label>
+        <input type="password" name="passwordNew" id="passwordNew" ngModel/>
+
+        <label>Name</label>
+        <input type="text" name="name" id="name" [(ngModel)]="user.name" />
+
+        <label>Surname</label>
+        <input type="text" name="surrname" id="surrname" [(ngModel)]="user.surrname" />
+
+
+      </div>
+
+      <button (click)="anuluj()">Anuluj</button>
+      <button type="submit">Zapisz</button>
+    </form>
+
+    <div *ngIf="user == null">
+      Wczytywanie
+    </div>
+  </div>
+</div>

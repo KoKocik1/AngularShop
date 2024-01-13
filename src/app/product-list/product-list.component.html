@@ -1,0 +1,48 @@
+<html>
+<body>
+  <div class="product_list_html" *ngIf="isUserAuthenticated()">
+    <div class="product_list_body">
+      <main>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 10px;">Id</th>
+              <th style="width: 150px;">Nazwa</th>
+              <th style="width: 200px;">Opis</th>
+              <th style="width: 140px;">Cena</th>
+              <th class='select' style="width: 60px;"> </th>
+            </tr>
+          </thead>
+        </table>
+        <div *ngFor="let p of produkty">
+          <app-products [data]="p" (deleteProductClick)="DeleteProductClick($event)" (onAddClick)="BtnAddClick($event)"></app-products>
+        </div>
+      </main>
+      <br />
+      <main>
+        <table border="1">
+          <tbody>
+            <tr>
+              <label style="margin-left: 10%;">Page:</label>
+              <input class="button" type="number" name="page" [(ngModel)]="page" />
+              <label>Rows:</label>
+              <input class="button" type="number" name="rowsPerPage" [(ngModel)]="rowsPerPage" />
+              <button style="position: absolute; right: 15%;" class="button" (click)="refresh()">Odśwież</button>
+              <button style="position: absolute; right: 5%;" class="button" (click)="addProduct()">Dodaj produkt do bazy</button>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+      <br />
+
+      <div>
+        <app-koszyk [koszyk]="koszyk" (onMoreClick)="MoreClick($event)"
+                    (onLessClick)="LessClick($event)"
+                    (onDeleteClick)="DeleteClick($event)"
+                    (onClickClear)="ClearClick()">
+        </app-koszyk>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

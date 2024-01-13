@@ -1,0 +1,21 @@
+
+<div class="productForm">
+  <div class="container">
+    <form #addProduct = "ngForm" (ngSubmit) = "onSubmit(addProduct.value)" >
+      <div class="brand-title">PRODUCT ADD</div>
+      <div class="inputs">
+        <label>NAME</label>
+        <input  type="text" name="name" id="name" ngModel/>
+
+        <label>DESCRIPTION</label>
+        <input type="text" name="description" id="description" ngModel/>
+
+        <label>PRICE</label>
+        <input  type="number" name="price" id="price" ngModel/>
+      </div>
+
+      <button (click)="anuluj()">Anuluj</button>
+      <button type="submit">DODAJ</button>
+    </form>
+  </div>
+</div>

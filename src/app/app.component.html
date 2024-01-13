@@ -1,0 +1,29 @@
+<html>
+<body>
+  <div class=" menuGlowne">
+    <div class="background-one link-container">
+
+      <a class="link-one" routerLink="products">Product</a>
+
+    </div>
+    <div class="background-two link-container">
+      <a class="link-two" routerLink="users">Users</a>
+    </div>
+    <div class="background-three link-container">
+      <a class="link-three" routerLink="basket">Basket</a>
+    </div>
+  </div>
+  <div class="context">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="footer">
+    <div *ngIf="isUserAuthenticated()">
+      <!-- HTML !-->
+      <br />
+      <button routerLink="login" (click)="logOut()" class="button-49" role="button">WYLOGUJ</button>
+      <br />
+
+    </div>
+  </div>
+</body>
+</html>

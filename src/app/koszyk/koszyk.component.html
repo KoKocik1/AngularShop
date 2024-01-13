@@ -1,0 +1,52 @@
+<main>
+  <table border="1" *ngIf="isUserAuthenticated()">
+    <tr>
+      <td style="width: 300px;">
+        W koszyku znajduje sie: {{iloscArtykulow()}} produktow.
+      </td>
+      <td style="width: 200px;">
+        Wartośc koszyka to: {{sumaKoszyk()}}zł.
+
+      </td>
+      <td *ngIf="koszyk.length>0" class='select' style="width: 100px;">
+        <button class='button' (click)="ShowBasketClick()">Wyswietl koszyk</button>
+        <button class='button' (click)="ClearClick()">Wyczyść koszyk</button>
+      </td>
+    </tr>
+  </table>
+</main>
+<br />
+<main *ngIf="wyswietlac" >
+  <table *ngIf="isUserAuthenticated()">
+    <thead>
+      <tr>
+        <th style="width: 200px;">Artykuł</th>
+        <th style="width: 100px;">Cena</th>
+        <th style="width: 70px;">Ilość</th>
+        <th style="width: 100px;">Suma</th>
+        <th class='select' style="width: 100px;"> </th>
+      </tr>
+    </thead>
+  </table>
+  <table border="1">
+    <tr *ngFor="let k of koszyk">
+      <td style="width: 200px;">
+        {{k.name}}
+      </td>
+      <td style="width: 100px;">
+        {{k.price}} zł
+      </td>
+      <td style="width: 80px;">
+        {{k.count}}
+      </td>
+      <td style="width: 100px;">
+        {{k.price*k.count}}
+      </td>
+      <td class='select' style="width: 100px;">
+        <button class='button' (click)="onMoreClick(k)">+</button>
+        <button class='button' (click)="onLessClick(k)">-</button>
+        <button class='button' (click)="onDeleteClick(k)">Usun</button>
+      </td>
+    </tr>
+  </table>
+</main>

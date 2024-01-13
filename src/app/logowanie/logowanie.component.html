@@ -1,0 +1,19 @@
+
+<div class="productForm">
+  <div class="container">
+    <form #addProduct="ngForm" (ngSubmit)="onSubmit(addProduct.value)">
+      <div class="brand-title">LOGOWANIE</div>
+      <div *ngIf="invalidLogin" class="brand-title" >Błędny login lub hasło</div>
+      <br />
+      <div class="inputs">
+        <label>LOGIN</label>
+        <input type="text" name="login" id="login" ngModel />
+
+        <label>PASSWORD</label>
+        <input type="password" name="password" id="password" ngModel />
+      </div>
+      <button type="submit">LOGOWANIE</button>
+    </form>
+  </div>
+</div>
+
